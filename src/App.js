@@ -43,6 +43,7 @@ function App() {
                 {data.map(item => (
                     <PostCard key={item.id} item={item}/>
                 ))}
+                <h1>{page}</h1>
                 <div >
                     <button  className={"button"} disabled={page<=1}
                             onClick={()=>setPage(prev=>(prev-1))} >Previous Page</button>
