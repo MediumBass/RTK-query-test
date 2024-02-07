@@ -6,12 +6,15 @@
 }
 .button{
   color: #a60f58;
-  font-size:160%;
+  font-size:2vw;
+
   margin: 1em;
   padding: 0.25em 1em;
   border: 2px solid #a60f58;
   border-radius: 3px;
-  width: 25vw;
+  width: 20vw;
+  min-height: 30px;
+  height: 6vw;
 }
 .cards{
   font-size: 0.8vh;
