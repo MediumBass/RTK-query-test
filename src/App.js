@@ -1,25 +1,21 @@
 import './App.css';
-import axios from "axios";
-import {useQuery} from "react-query";
+
 import PostCard from "./components/PostCard";
 import React, {useState} from "react";
 
+import {
+    useGetPostsQuery,
+} from "./features/apiSlice";
 
 
-async function fetchPosts(page=0){
-  const {data} = await axios.get(
-      `https://jsonplaceholder.typicode.com/posts?_page=`+page,
-  )
-    console.log("Data was fetched")
-  return data
-}
 function App() {
     const [page, setPage] = useState(1)
-    const {data, isLoading, isError,refetch} = useQuery(['posts', page],
-        () => fetchPosts(page),
-        {
-            keepPreviousData: false
-        })
+    const {
+        data,
+        isError,
+        isLoading,
+        refetch,
+    } = useGetPostsQuery(page);
 
     if (isLoading) {
         return (
